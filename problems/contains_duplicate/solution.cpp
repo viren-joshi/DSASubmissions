@@ -1,9 +1,14 @@
 class Solution {
 public:
     bool containsDuplicate(vector<int>& nums) {
-        sort(nums.begin(),nums.end());
-        for(int i=1;i<nums.size();i++){
-            if(nums[i-1]==nums[i]) return true;
+        unordered_map<int,int> map;
+
+        for(auto i:nums) {
+            if(map.count(i) == 0) {
+                map[i] = 1;
+            } else {
+                return true;
+            }
         }
         return false;
     }
