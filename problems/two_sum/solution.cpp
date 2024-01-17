@@ -1,14 +1,20 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        if(nums.size()==2) return vector<int> {0,1};
-        auto i = nums.end();
-        for (auto itr=nums.begin();itr!=nums.end();itr++){
-            i = find(itr+1,nums.end(),target-*itr);
-            if(i!=nums.end() && i!=itr){
-                return vector<int>{int(itr-nums.begin()),int(i-nums.begin())};
+        vector<int> ans = {0,1};
+        int temp,l=nums.size();
+        map<int,int> map;
+        for(int i=0;i<l; i++) {
+            map[nums[i]] = i;
+        }
+        for (int i=0; i<l; i++) {
+            temp = target-nums[i];
+            cout<<"H"<<map.count(temp);
+            if(map.count(temp) && map[temp] != i) {
+                ans[0] = i;
+                ans[1] = map[temp];
             }
         }
-        return vector<int>{0,0};
+        return ans;
     }
 };
