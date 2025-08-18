@@ -1,3 +1,9 @@
+/*
+    Swap all the non diagonal elements M (i,j) with M(j,i)
+
+    Reverse all the rows in the matrix
+*/
+
 class Solution {
 public:
     void rotate(vector<vector<int>>& matrix) {
