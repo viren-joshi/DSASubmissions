@@ -1,4 +1,5 @@
 /*
+!Check Notes!
 
 As per the hint, we need to maintain a sliding window with atleast one 0 in it.
 
