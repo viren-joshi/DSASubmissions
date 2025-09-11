@@ -6,7 +6,7 @@ public:
     }
 
     string sortVowels(string s) {
-        unordered_map<char,int> count;
+        map<char,int> count;
         string ans, sortedVowel = "AEIOUaeiou";
 
         for (char c: s) {
