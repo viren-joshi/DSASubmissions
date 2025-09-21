@@ -1,19 +1,16 @@
 class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
-        vector<int> ans = {0,1};
-        int temp,l=nums.size();
-        map<int,int> map;
-        for(int i=0;i<l; i++) {
-            map[nums[i]] = i;
+        map<int,int> data;
+        for(int i = 0; i<nums.size(); i++) {
+            data[nums[i]] = i;
         }
-        for (int i=0; i<l; i++) {
-            temp = target-nums[i];
-            if(map.count(temp) && map[temp] != i) {
-                ans[0] = i;
-                ans[1] = map[temp];
+        for(int i=0; i<nums.size(); i++) {
+            int temp = target-nums[i];
+            if(data.contains(temp) && data[temp] != i) {
+                return {i , data[temp]};
             }
         }
-        return ans;
+        return {0,1};
     }
 };
